@@ -1,0 +1,25 @@
+{
+  "name": "@okey573/fe-cli",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "vis-fe-cli": "index.js"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^9.5.0",
+    "kolorist": "^1.6.0",
+    "prompts": "^2.4.2",
+    "rollup": "^3.10.0"
+  }
+}
