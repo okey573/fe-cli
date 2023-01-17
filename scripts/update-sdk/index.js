@@ -32,7 +32,7 @@ export default function () {
   const localSdkVersionDate = version2Date(localSdkVersion.trim())
   const latestSdkVersionDate = version2Date(latestSdkVersion.trim())
   if (localSdkVersionDate.getTime() >= latestSdkVersionDate.getTime()) {
-    console.log(green(`当前sdk已是最新版本`))
+    console.log(green(`\n当前sdk已是最新版本`))
     deleteDir(tempSdkDir)
     process.exit(1)
   } else {

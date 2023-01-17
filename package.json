@@ -19,7 +19,6 @@
   "dependencies": {
     "commander": "^9.5.0",
     "kolorist": "^1.6.0",
-    "prompts": "^2.4.2",
-    "rollup": "^3.10.0"
+    "prompts": "^2.4.2"
   }
 }
