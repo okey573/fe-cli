@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url'
 import prompts from 'prompts'
 import { red, green, bold } from 'kolorist'
 import renderTemplate from './renderTemplate.js'
-import deleteDir from './deleteDir.js'
-import { execute } from '../../utils/index.js'
+import configs  from '../../configs.js'
+import { execute, deleteDir } from '../../utils/index.js'
 
 export default async function (argName) {
   if (argName && (!argName.startsWith('vc-') && !argName.startsWith('vup-'))) {
@@ -72,7 +72,8 @@ export default async function (argName) {
   fs.writeFileSync(path.resolve(root, 'package-lock.json'), JSON.stringify(pkg, null, 2))
 
   const tempTemplateDir = fileURLToPath(new URL('./template', import.meta.url))
-  execute(`git clone http://gitlab.tools.vipshop.com/scp/vue3-template --depth=1 ${tempTemplateDir}`)
+  const { repo, branch } = configs.vue3Template
+  execute(`git clone ${repo} --branch=${branch} --depth=1 ${tempTemplateDir}`)
   renderTemplate({
     src: tempTemplateDir,
     dest: root,
